@@ -7,7 +7,6 @@ This is my personal portfolio website built with Next.js, TypeScript, and Tailwi
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Shadcn/ui](https://ui.shadcn.com/)
 - [Vercel](https://vercel.com/)
 
 ## Project Structure
