@@ -1,14 +1,13 @@
-import './globals.css';
-
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GeistSans } from 'geist/font/sans';
+import '@/app/globals.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { GeistMono } from 'geist/font/mono';
+
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
-import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Carlos Acosta',
@@ -37,15 +36,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html className='m-auto max-w-200 p-8' lang='en'>
       <body
-        className={`${GeistSans.className} flex min-h-screen flex-col bg-neutral-50 transition-colors duration-100 dark:bg-neutral-900`}
+        className={`${GeistMono.className} flex min-h-screen flex-col bg-neutral-950`}
       >
-        <ThemeProvider attribute='class' enableSystem>
-          <NavBar />
-          <main>{children}</main>
-          <Analytics />
-          <SpeedInsights />
-          <Footer />
-        </ThemeProvider>
+        <NavBar />
+        <main>{children}</main>
+        <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
