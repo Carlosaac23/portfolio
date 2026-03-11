@@ -1,18 +1,14 @@
-import { Suspense } from 'react';
 import Balancer from 'react-wrap-balancer';
 
 import Links from '@/components/Links';
 import ProjectCard from '@/components/ProjectCard';
-import { ProjectsSkeleton } from '@/components/ProjectsSkeleton';
 import getProjects from '@/lib/github-services';
 
 export default async function HomePage() {
   return (
     <main className='flex flex-col'>
-      <h1 className='mb-3 text-2xl font-bold text-neutral-950 dark:text-neutral-50'>
-        Carlos Acosta
-      </h1>
-      <p className='mb-1 leading-8 tracking-wide text-neutral-800 lg:mb-2 lg:leading-7 lg:tracking-normal dark:text-neutral-200'>
+      <h1 className='mb-3 text-2xl font-bold text-neutral-50'>Carlos Acosta</h1>
+      <p className='mb-1 text-sm leading-8 tracking-wide text-neutral-200 sm:text-base lg:mb-2 lg:leading-7 lg:tracking-normal'>
         <Balancer>
           I&apos;m a self-taught Full Stack Developer based in Colombia and a
           passionate tech enthusiast. I&apos;m constantly learning and building
@@ -25,9 +21,7 @@ export default async function HomePage() {
       <Links />
 
       <section className='flex flex-col gap-6'>
-        <Suspense fallback={<ProjectsSkeleton />}>
-          <ProjectsSection />
-        </Suspense>
+        <ProjectsSection />
       </section>
     </main>
   );
@@ -40,10 +34,10 @@ async function ProjectsSection() {
     <>
       {projects.length > 0 ? (
         <>
-          <h2 className='text-xl font-bold tracking-wide text-neutral-950 dark:text-neutral-50'>
+          <h2 className='text-xl font-bold tracking-wide text-neutral-50'>
             Projects
           </h2>
-          <div className='grid gap-5 text-sm sm:grid-cols-[1fr_1fr]'>
+          <div className='flex flex-col gap-4 sm:grid-cols-[1fr_1fr]'>
             {projects.map(project => (
               <ProjectCard key={project.name} project={project} />
             ))}
