@@ -4,7 +4,7 @@ export default function Links() {
   return (
     <div className='mb-6 flex gap-3 lg:gap-4'>
       <a
-        className='text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50'
+        className='text-sm text-neutral-400 hover:text-neutral-50'
         href='https://x.com/Carlosaac23'
         rel='noopener noreferrer'
         target='_blank'
@@ -17,7 +17,7 @@ export default function Links() {
       </a>
 
       <a
-        className='text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50'
+        className='text-sm text-neutral-400 hover:text-neutral-50'
         href='https://github.com/Carlosaac23'
         rel='noopener noreferrer'
         target='_blank'
@@ -30,7 +30,7 @@ export default function Links() {
       </a>
 
       <a
-        className='text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50'
+        className='text-sm text-neutral-400 hover:text-neutral-50'
         href='https://www.linkedin.com/in/carlos-acosta-7aa448263/'
         rel='noopener noreferrer'
         target='_blank'
@@ -43,7 +43,7 @@ export default function Links() {
       </a>
 
       <a
-        className='text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50'
+        className='text-sm text-neutral-400 hover:text-neutral-50'
         href='mailto:carlosaac232001@gmail.com'
         title='A link to send me an email'
       >
