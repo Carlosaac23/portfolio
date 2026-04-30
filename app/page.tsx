@@ -7,8 +7,10 @@ import getProjects from '@/lib/github-services';
 export default async function HomePage() {
   return (
     <main className='flex flex-col'>
-      <h1 className='mb-3 text-2xl font-bold text-neutral-50'>Carlos Acosta</h1>
-      <p className='mb-1 text-sm leading-8 tracking-wide text-neutral-200 sm:text-base lg:mb-2 lg:leading-7 lg:tracking-normal'>
+      <h1 className='mb-3 text-2xl font-bold text-(--foreground)'>
+        Carlos Acosta
+      </h1>
+      <p className='mb-1 text-base leading-8 tracking-wide text-(--foreground-secondary) lg:mb-2 lg:leading-7 lg:tracking-normal'>
         <Balancer>
           I&apos;m a self-taught Full Stack Developer based in Colombia and a
           passionate tech enthusiast. I&apos;m constantly learning and building
@@ -34,12 +36,12 @@ async function ProjectsSection() {
     <>
       {projects.length > 0 ? (
         <>
-          <h2 className='text-xl font-bold tracking-wide text-neutral-50'>
+          <h2 className='text-2xl font-bold tracking-wide text-(--foreground)'>
             Projects
           </h2>
           <div className='flex flex-col gap-4 sm:grid-cols-[1fr_1fr]'>
             {projects.map(project => (
-              <ProjectCard key={project.name} project={project} />
+              <ProjectCard key={project.name} {...project} />
             ))}
           </div>
         </>
