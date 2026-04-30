@@ -1,7 +1,8 @@
 'use server';
 
-import type { Project } from '@/components/ProjectCard';
 import { cache } from 'react';
+
+import type { Project } from '@/types';
 
 const getProjectsImpl = async (): Promise<Project[]> => {
   const url = 'https://api.github.com/users/carlosaac23/repos';
