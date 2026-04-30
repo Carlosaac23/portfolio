@@ -16,11 +16,14 @@
       "unknown"
     ]
   },
-  "experimentalTailwindcss": {
+  "sortTailwindcss": {
     "stylesheet": "./app/globals.css",
     "attributes": ["class", "className"],
     "functions": ["clsx", "cn"],
     "preserveDuplicates": false,
     "preserveWhitespace": false
+  },
+  "sortPackageJson": {
+    "sortScripts": true
   }
 }
