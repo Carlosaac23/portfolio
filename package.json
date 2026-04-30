@@ -7,13 +7,13 @@
     "email": "carlosaac232001@gmail.com"
   },
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
-    "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check"
+    "start": "next start"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.0",
@@ -35,6 +35,6 @@
     "oxfmt": "^0.37.0",
     "oxlint": "^1.52.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^6.0.3"
   }
 }
