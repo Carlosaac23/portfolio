@@ -7,3 +7,9 @@ export interface Project {
   fork: boolean;
   stargazers_count: number;
 }
+
+export type Link = {
+  url: string;
+  title: string;
+  label: string;
+};
