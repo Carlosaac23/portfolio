@@ -5,7 +5,7 @@ import { cache } from 'react';
 import type { Project } from '@/types';
 
 const getProjectsImpl = async (): Promise<Project[]> => {
-  const url = 'https://api.github.com/users/carlosaac23/repos';
+  const url = 'https://api.github.com/users/carlosaac23/repos?per_page=100';
   const { GITHUB_TOKEN } = process.env;
 
   try {
