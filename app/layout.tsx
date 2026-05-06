@@ -9,17 +9,19 @@ import { GeistSans } from 'geist/font/sans';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
 
+const { PORTFOLIO_URL } = process.env;
+
 export const metadata: Metadata = {
   title: 'Carlos Acosta',
   description: 'Portfolio personal de proyectos y perfil profesional',
   icons: {
     icon: '/favicon.ico',
   },
-  metadataBase: new URL('https://portfolio-steel-kappa-78.vercel.app/'),
+  metadataBase: new URL(PORTFOLIO_URL!),
   openGraph: {
     title: 'Carlos Acosta - Portfolio',
     description: 'Personal Portfolio',
-    url: 'https://portfolio-steel-kappa-78.vercel.app/',
+    url: PORTFOLIO_URL,
     siteName: 'Carlos Acosta - Portfolio',
     locale: 'en_US',
     type: 'website',
