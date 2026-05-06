@@ -2,6 +2,12 @@ import type { Link } from '@/types';
 
 export const links: Link[] = [
   {
+    url: 'https://x.com/Carlosaac23',
+    title: 'A link to my twitter account',
+    label: 'X',
+    suffix: '(aka Twitter)',
+  },
+  {
     url: 'https://github.com/Carlosaac23',
     title: 'A link to my GitHub',
     label: 'GitHub',

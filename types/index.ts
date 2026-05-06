@@ -12,4 +12,5 @@ export type Link = {
   url: string;
   title: string;
   label: string;
+  suffix?: string;
 };
