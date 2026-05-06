@@ -51,7 +51,7 @@ export default function ProjectCard({
             </span>
           </a>
         ) : (
-          <span className='text-sm text-(--gray)'>No live demo available</span>
+          <span className='text-sm text-(--gray)'>No repo available</span>
         )}
       </div>
       <ul className='mt-2 flex max-h-8 flex-wrap gap-2 overflow-y-auto py-0.5 pr-2'>
