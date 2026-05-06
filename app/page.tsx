@@ -6,7 +6,7 @@ import getProjects from '@/lib/github-services';
 
 export default async function HomePage() {
   return (
-    <main className='flex flex-col'>
+    <section className='flex flex-col'>
       <h1 className='mb-3 text-2xl font-bold text-(--foreground)'>
         Carlos Acosta
       </h1>
@@ -25,7 +25,7 @@ export default async function HomePage() {
       <section className='flex flex-col gap-6'>
         <ProjectsSection />
       </section>
-    </main>
+    </section>
   );
 }
 
@@ -39,7 +39,7 @@ async function ProjectsSection() {
           <h2 className='text-2xl font-bold tracking-wide text-(--foreground)'>
             Projects
           </h2>
-          <div className='flex flex-col gap-4 sm:grid-cols-[1fr_1fr]'>
+          <div className='flex flex-col gap-4 sm:grid sm:grid-cols-2'>
             {projects.map(project => (
               <ProjectCard key={project.name} {...project} />
             ))}
