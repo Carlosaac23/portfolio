@@ -1,11 +1,11 @@
-import type { Link } from '@/types';
+import type { Link } from '../types/link.js';
 
 export const links: Link[] = [
   {
     url: 'https://x.com/Carlosaac23',
     title: 'A link to my twitter account',
     label: 'X',
-    suffix: '(aka Twitter)',
+    suffix: 'Twitter',
   },
   {
     url: 'https://github.com/Carlosaac23',

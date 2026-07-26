@@ -1,22 +1,32 @@
-# Portfolio Website
+# Portfolio
 
-This is my personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. It showcases my projects and skills as a software developer.
+Hi there!😄. My name is Carlos Acosta and this is my portfolio built with Hono and TSX. Here you can see my main projects and reach me out.
 
-## Technologies Used
+## Structure
 
-- [Next.js](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Vercel](https://vercel.com/)
+Here's the project structure
 
-## Project Structure
-
-- `app/` - Contains all the pages and layouts for the application.
-- `components/` - Contains all the reusable components.
-- `lib/` - Contains utility functions and services.
-
-## Contact
-
-Carlos Acosta - [@carlosaac23](https://x.com/carlosaac23)
-
-Project Link: [Link to my portfolio](https://portfolio-steel-kappa-78.vercel.app/)
+```bash
+portfolio/
+├── src/
+│   ├── components/
+│   ├── config/
+│   │   └── env.ts
+│   ├── lib/
+│   │   ├── github.ts
+│   │   └── links.ts
+│   ├── types/
+│   ├── index.tsx
+│   └── server.ts
+├── public/
+│   └── static/
+│       ├── profile.jpg
+│       ├── reset.css
+│       └── style.css
+├── .gitignore
+├── oxfmt.config.ts
+├── oxlint.config.ts
+├── package.json
+├── tsconfig.json
+└── README.md
+```

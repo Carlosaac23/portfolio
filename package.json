@@ -1,40 +1,28 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
   "author": {
     "name": "Carlos Acosta",
     "email": "carlosaac232001@gmail.com"
   },
+  "type": "module",
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
+    "build": "tsc",
+    "dev": "tsx watch --env-file=.env src/server.ts",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
-    "start": "next start"
+    "start": "node dist/index.js"
   },
   "dependencies": {
-    "@vercel/analytics": "^2.0.0",
-    "@vercel/speed-insights": "^2.0.0",
-    "geist": "^1.7.0",
-    "lucide-react": "^0.577.0",
-    "next": "^16.2.6",
-    "postcss": "^8.5.14",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "react-wrap-balancer": "^1.1.1"
+    "@hono/node-server": "^2.0.11",
+    "hono": "^4.12.31"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^25.2.1",
-    "@types/react": "^19.2.13",
-    "@types/react-dom": "^19",
-    "baseline-browser-mapping": "^2.10.27",
-    "oxfmt": "^0.37.0",
-    "oxlint": "^1.63.0",
-    "tailwindcss": "^4",
-    "typescript": "^6.0.3"
+    "@types/node": "^26.1.1",
+    "oxfmt": "^0.60.0",
+    "oxlint": "^1.75.0",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2"
   }
 }

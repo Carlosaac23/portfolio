@@ -1,4 +1,4 @@
-export interface Project {
+export interface Repo {
   name: string;
   html_url: string;
   homepage: string;
@@ -7,10 +7,3 @@ export interface Project {
   fork: boolean;
   stargazers_count: number;
 }
-
-export type Link = {
-  url: string;
-  title: string;
-  label: string;
-  suffix?: string;
-};
