@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'Geist';
+  src: url('/static/fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
 
 :root {
   --background: #0a0a0a;
@@ -34,7 +39,7 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: Geist, Arial, sans-serif;
+  font-family: 'Geist', sans-serif;
 
   display: flex;
   flex-direction: column;
