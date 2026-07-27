@@ -10,9 +10,12 @@ import Header from './components/header.js';
 import Links from './components/links.js';
 import Main from './components/main.js';
 import Repos from './components/repos.js';
+import { env } from './config/env.js';
 import getRepos from './lib/github.js';
 
 const app = new Hono();
+
+const isDev = env.NODE_ENV === 'development';
 
 app.use('/static/*', serveStatic({ root: './public' }));
 
@@ -24,23 +27,19 @@ const Layout: FC = ({ children }) => {
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <title>Carlos Acosta</title>
 
-        <script
-          src='https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js'
-          integrity='sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V'
-          crossorigin='anonymous'
-        ></script>
-
         <link rel='stylesheet' href='/static/reset.css' />
         <link rel='stylesheet' href='/static/style.css' />
 
-        <script src='https://unpkg.com/lucide@1.27.0/dist/umd/lucide.js'></script>
-
-        <script src='https://unpkg.com/lucide@1.27.0'></script>
+        {isDev ? (
+          <script src='https://unpkg.com/lucide@latest/dist/umd/lucide.js'></script>
+        ) : (
+          <script src='https://unpkg.com/lucide@latest'></script>
+        )}
       </head>
 
       <body>{children}</body>
 
-      <script>lucide.createIcons();</script>
+      <script>lucide.createIcons()</script>
     </html>
   );
 };
