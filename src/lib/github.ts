@@ -3,13 +3,14 @@ import type { Repo } from '../types/repo.js';
 import { env } from '../config/env.js';
 
 export default async function getRepos(): Promise<Repo[]> {
-  const url = 'https://api.github.com/users/carlosaac23/repos?per_page=100';
+  const url =
+    'https://api.github.com/search/repositories?q=user:carlosaac23+fork:false+stars:>=1';
 
   try {
     const res = await fetch(url, {
       headers: {
         Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-        Accept: 'application/vnd.github.v3+json',
+        Accept: 'application/vnd.github+json',
       },
     });
 
@@ -18,8 +19,8 @@ export default async function getRepos(): Promise<Repo[]> {
       return [];
     }
 
-    const data: Repo[] = await res.json();
-    return data.filter(repo => repo.stargazers_count >= 1 && !repo.fork);
+    const { items } = await res.json();
+    return items;
   } catch (error) {
     console.error('Error fetching repos:', error);
     return [];
