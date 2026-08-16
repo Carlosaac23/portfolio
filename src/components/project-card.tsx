@@ -1,20 +1,12 @@
 import type { Repo } from '../types/repo.js';
 
-export default function ProjectCard({
-  name,
-  html_url,
-  homepage,
-  description,
-  topics,
-}: Repo) {
+export default function ProjectCard({ name, html_url, homepage, description, topics }: Repo) {
   return (
     <div class='project__card'>
       <div>
         <h3 class='project__card-title'>{name}</h3>
         <div class='project__card-description-container'>
-          <p class='project__card-description'>
-            {description || 'No description available'}
-          </p>
+          <p class='project__card-description'>{description || 'No description available'}</p>
         </div>
 
         {homepage ? (
@@ -46,9 +38,7 @@ export default function ProjectCard({
             </span>
           </a>
         ) : (
-          <span class='project__card-homepage-span-2'>
-            No live demo available
-          </span>
+          <span class='project__card-homepage-span-2'>No live demo available</span>
         )}
 
         <span class='separator'>|</span>

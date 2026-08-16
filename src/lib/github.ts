@@ -4,8 +4,7 @@ import { reposCache } from '../cache.js';
 import { env } from '../config/env.js';
 
 export default async function getRepos(): Promise<Repo[]> {
-  const url =
-    'https://api.github.com/search/repositories?q=user:carlosaac23+fork:false+stars:>=1';
+  const url = 'https://api.github.com/search/repositories?q=user:carlosaac23+fork:false+stars:>=1';
   const CACHE_KEY = 'repos';
   const cachedRepos = reposCache.get(CACHE_KEY);
 

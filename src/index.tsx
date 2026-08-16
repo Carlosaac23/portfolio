@@ -48,14 +48,8 @@ const Layout: FC = ({ children }) => {
           property='og:description'
           content='Portfolio showcasing projects, technical skills, and open-source work.'
         />
-        <meta
-          property='og:url'
-          content='https://portfolio-steel-kappa-78.vercel.app/'
-        />
-        <meta
-          property='og:image'
-          content='https://portfolio-steel-kappa-78.vercel.app/static/profile.webp'
-        />
+        <meta property='og:url' content='https://www.carlosaac23.me/' />
+        <meta property='og:image' content='https://www.carlosaac23.me/static/profile.webp' />
         <meta property='og:site_name' content='Carlos Acosta' />
 
         {/* <!-- Twitter --> */}
@@ -65,10 +59,7 @@ const Layout: FC = ({ children }) => {
           name='twitter:description'
           content='Portfolio showcasing projects, technical skills, and open-source work.'
         />
-        <meta
-          name='twitter:image'
-          content='https://portfolio-steel-kappa-78.vercel.app/static/profile.webp'
-        />
+        <meta name='twitter:image' content='https://www.carlosaac23.me/static/profile.webp' />
 
         <link rel='stylesheet' href='/static/reset.css' />
         <link rel='stylesheet' href='/static/style.css' />
