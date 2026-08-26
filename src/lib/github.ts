@@ -10,13 +10,16 @@ export default async function getRepos(): Promise<Repo[]> {
 
   if (cachedRepos) return cachedRepos;
 
+  const headers: Record<string, string> = {
+    Accept: 'application/vnd.github+json',
+  };
+
+  if (env.GITHUB_TOKEN.trim()) {
+    headers.Authorization = `Bearer ${env.GITHUB_TOKEN}`;
+  }
+
   try {
-    const res = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-        Accept: 'application/vnd.github+json',
-      },
-    });
+    const res = await fetch(url, { headers });
 
     if (!res.ok) {
       console.error(`Error fetching repos: ${res.status} ${res.statusText}`);
