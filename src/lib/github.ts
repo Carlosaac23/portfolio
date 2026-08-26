@@ -22,6 +22,10 @@ export default async function getRepos(): Promise<Repo[]> {
     const res = await fetch(url, { headers });
 
     if (!res.ok) {
+      if (res.status === 429) {
+        console.error('Rate limit exceeded fetching repos. Try again later.');
+        return [];
+      }
       console.error(`Error fetching repos: ${res.status} ${res.statusText}`);
       return [];
     }
@@ -32,7 +36,11 @@ export default async function getRepos(): Promise<Repo[]> {
 
     return items;
   } catch (error) {
-    console.error('Error fetching repos:', error);
+    if (error instanceof TypeError) {
+      console.error('Network error fetching repos:', error.message);
+    } else {
+      console.error('Unexpected error fetching repos:', error);
+    }
     return [];
   }
 }
