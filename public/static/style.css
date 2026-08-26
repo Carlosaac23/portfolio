@@ -150,6 +150,12 @@ body {
   }
 }
 
+.projects__empty {
+  margin-top: 1rem;
+  color: #a1a1aa;
+  font-size: 0.95rem;
+}
+
 /* PROJECT CARD */
 .project__card {
   display: flex;
@@ -188,7 +194,6 @@ body {
 .project__card-description-container {
   color: var(--gray);
   max-height: 3.5rem;
-  overflow-y: auto;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
@@ -237,7 +242,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   max-height: 2rem;
-  overflow-y: auto;
   gap: 0.5rem;
   padding: 0.125rem 0.5rem 0.125rem 0;
 }
