@@ -20,7 +20,7 @@ portfolio/
 │   └── server.ts
 ├── public/
 │   └── static/
-│       ├── profile.jpg
+│       ├── profile.webp
 │       ├── reset.css
 │       └── style.css
 ├── .gitignore
