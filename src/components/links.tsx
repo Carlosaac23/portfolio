@@ -1,4 +1,4 @@
-import { links } from '../lib/links.js';
+import { links } from '../data/links.js';
 import ExternalLinkIcon from './external-link.js';
 
 export default function Links() {
