@@ -18,8 +18,8 @@ export const links: Link[] = [
     label: 'LinkedIn',
   },
   {
-    url: 'mailto:carlosaac232001@gmail.com',
-    title: 'A link to send me an email',
-    label: 'Write me',
+    url: 'mailto:carlosaac232001@proton.me',
+    title: 'Send an email to Carlos Acosta',
+    label: 'carlosaac232001@proton.me',
   },
 ];
