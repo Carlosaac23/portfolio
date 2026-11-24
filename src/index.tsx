@@ -16,18 +16,24 @@ const app = new Hono();
 
 app.use('/static/*', serveStatic({ root: './public' }));
 
+const siteTitle = 'Carlos Acosta | Self-taught Developer';
+const siteDescription =
+  'Self-taught developer based in Colombia, building useful software through full-stack development and working toward AI engineering. Explore my projects and get in touch.';
+const siteUrl = 'https://www.carlosaac23.me/';
+const socialImage = `${siteUrl}static/og-image.png`;
+const socialImageAlt =
+  'Carlos Acosta — self-taught developer based in Colombia. Full-stack development, with a growing focus on AI.';
+
 const Layout: FC = ({ children }) => {
   return (
     <html lang='en'>
       <head>
         <meta charset='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <title>Carlos Acosta</title>
+        <title>{siteTitle}</title>
 
-        <meta
-          name='description'
-          content='Portfolio of Carlos Acosta, a Full Stack Developer from Colombia. Explore projects, technical skills, and open-source work.'
-        />
+        <meta name='description' content={siteDescription} />
+        <link rel='canonical' href={siteUrl} />
 
         <meta
           name='keywords'
@@ -43,23 +49,22 @@ const Layout: FC = ({ children }) => {
 
         {/* <!-- Open Graph --> */}
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='Carlos Acosta' />
-        <meta
-          property='og:description'
-          content='Portfolio showcasing projects, technical skills, and open-source work.'
-        />
-        <meta property='og:url' content='https://www.carlosaac23.me/' />
-        <meta property='og:image' content='https://www.carlosaac23.me/static/profile.webp' />
+        <meta property='og:title' content={siteTitle} />
+        <meta property='og:description' content={siteDescription} />
+        <meta property='og:url' content={siteUrl} />
+        <meta property='og:image' content={socialImage} />
+        <meta property='og:image:type' content='image/png' />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
+        <meta property='og:image:alt' content={socialImageAlt} />
         <meta property='og:site_name' content='Carlos Acosta' />
 
         {/* <!-- Twitter --> */}
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:title' content='Carlos Acosta' />
-        <meta
-          name='twitter:description'
-          content='Portfolio showcasing projects, technical skills, and open-source work.'
-        />
-        <meta name='twitter:image' content='https://www.carlosaac23.me/static/profile.webp' />
+        <meta name='twitter:title' content={siteTitle} />
+        <meta name='twitter:description' content={siteDescription} />
+        <meta name='twitter:image' content={socialImage} />
+        <meta name='twitter:image:alt' content={socialImageAlt} />
 
         <link rel='stylesheet' href='/static/reset.css' />
         <link rel='stylesheet' href='/static/style.css' />
