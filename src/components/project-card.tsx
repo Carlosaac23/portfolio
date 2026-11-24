@@ -20,13 +20,10 @@ export default function ProjectCard({
   index,
 }: ProjectCardProps) {
   const screenshot = screenshots[name];
-  const isCli = name === 'genkey-cli';
-  const stack = isCli
-    ? ['TypeScript', 'Node.js']
-    : (topics ?? [])
-        .filter(topic => topicLabels[topic])
-        .slice(0, 4)
-        .map(topic => topicLabels[topic]);
+  const stack = (topics ?? [])
+    .filter(topic => topicLabels[topic])
+    .slice(0, 4)
+    .map(topic => topicLabels[topic]);
 
   return (
     <li class='project__card'>
