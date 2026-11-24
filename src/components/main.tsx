@@ -3,10 +3,10 @@ export default function Main() {
     <section id='main'>
       <h1 class='main__title'>Carlos Acosta</h1>
       <p class='main__text'>
-        I&apos;m a self-taught Full Stack Developer based in Colombia and a passionate tech
-        enthusiast. I&apos;m constantly learning and building projects to sharpen my skills and grow
-        as a professional. I&apos;m excited to keep evolving, tackling new challenges, and expanding
-        my knowledge every day in this amazing world. Reach me out here.
+        I&apos;m a self-taught developer based in Colombia turning curiosity into working software.
+        I&apos;m complementing that foundation with formal studies in engineering to become an AI
+        Engineer. Combining full-stack development with a growing focus on AI. My goal is to build
+        tools that solve real problems and earn a place in people&apos;s everyday lives.
       </p>
     </section>
   );
