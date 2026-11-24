@@ -107,6 +107,7 @@ body {
 }
 
 .links__link {
+  min-width: 0;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: var(--gray);
@@ -116,10 +117,21 @@ body {
   color: var(--foreground);
 }
 
+.links__link:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 4px;
+}
+
 .links__link-span {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.links__link-span svg {
+  flex-shrink: 0;
 }
 
 /* PROJECTS SECTION */

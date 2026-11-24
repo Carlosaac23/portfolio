@@ -3,14 +3,14 @@ import ExternalLinkIcon from './external-link.js';
 
 export default function Links() {
   return (
-    <section id='links'>
+    <section id='links' aria-label='Social profiles and contact'>
       {links.map(link => (
         <a
           class='links__link'
           key={link.label}
           href={link.url}
-          rel='noopener noreferrer'
-          target='_blank'
+          rel={link.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+          target={link.url.startsWith('mailto:') ? undefined : '_blank'}
           title={link.title}
         >
           <span class='links__link-span'>
