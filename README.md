@@ -20,13 +20,9 @@ Open `http://localhost:3000` (or the port configured in `.env`). The development
 
 ## Configuration
 
-| Variable       | Default   | Purpose                                                      |
-| -------------- | --------- | ------------------------------------------------------------ |
-| `PORT`         | `3000`    | HTTP server port.                                            |
-| `GITHUB_TOKEN` | Empty     | Optional token for authenticated GitHub repository requests. |
-| `CACHE_TTL_MS` | `3600000` | Repository cache lifetime in milliseconds.                   |
-
-Keep tokens in `.env` or your hosting environment; never commit them. Public projects can load without a token, subject to GitHub's API limits.
+| Variable | Default | Purpose           |
+| -------- | ------- | ----------------- |
+| `PORT`   | `3000`  | HTTP server port. |
 
 ## Build and checks
 
@@ -58,10 +54,8 @@ Run the app from the repository root so it can serve `public/static/`. The start
 src/
 ├── components/       # Page sections and reusable TSX components
 ├── config/env.ts     # Environment configuration
-├── data/             # Social links and technology display names
-├── lib/github.ts     # GitHub repository fetching
+├── data/             # Social links and curated projects
 ├── types/            # Shared TypeScript types
-├── cache.ts          # In-memory repository cache
 ├── index.tsx         # Hono application, layout, routes, and metadata
 └── server.ts         # Node.js server entry point
 public/static/
@@ -73,3 +67,11 @@ public/static/
 ├── reset.css
 └── style.css
 ```
+
+## Updating projects
+
+Edit [`src/data/projects.ts`](src/data/projects.ts) to add, remove, or reorder entries in **Selected work**. The homepage renders this list directly, so it displays the projects without calling the GitHub API or requiring a token.
+
+- Set the project name, description, repository URL, and technologies as they should appear on the site.
+- Add `demoUrl` to show a **Live demo** link.
+- Save screenshots in `public/static/projects/`. Set `image.src` to a `/static/projects/` URL and include alt text and the image's pixel dimensions. Omit `image` to show the repository preview instead.
