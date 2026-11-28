@@ -1,12 +1,11 @@
-import type { Repo } from '../types/repo.js';
+// import type { Repo } from '../types/repo.js';
+import type { Project } from '../types/project.js';
 
 import ProjectCard from './project-card.js';
 
-type RepoProps = { repos: Repo[] };
+type ReposProps = { projects: readonly Project[] };
 
-export default function Repos({ repos }: RepoProps) {
-  const hasRepos = repos.length > 0;
-
+export default function Repos({ projects }: ReposProps) {
   return (
     <section id='projects' aria-labelledby='projects-title'>
       <div class='projects__heading'>
@@ -16,12 +15,12 @@ export default function Repos({ repos }: RepoProps) {
             Selected work.
           </h2>
         </div>
-        <span class='projects__count'>{String(repos.length).padStart(2, '0')} projects</span>
+        <span class='projects__count'>{String(projects.length).padStart(2, '0')} projects</span>
       </div>
-      {hasRepos ? (
+      {projects.length > 0 ? (
         <ol class='projects__container'>
-          {repos.map((repo, index) => (
-            <ProjectCard key={repo.name} {...repo} index={index} />
+          {projects.map((project, index) => (
+            <ProjectCard key={project.repositoryUrl} {...project} index={index} />
           ))}
         </ol>
       ) : (

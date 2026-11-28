@@ -25,7 +25,7 @@ There is no configured test framework, test script, or coverage threshold. Befor
 
 ## Commit & Pull Request Guidelines
 
-Recent commits use prefixes such as `feat:`, `fix:`, and `chore:` with short, imperative descriptions. Follow that pattern. Pull requests should explain the change, link related issues when applicable, list verification performed, and include screenshots for visual changes.
+Whenever the user requests Git commits, delegate the task to the committer subagent. Wait for it to finish and report the results.
 
 ## Security & Configuration
 
