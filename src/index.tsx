@@ -2,15 +2,15 @@ import type { FC } from 'hono/jsx';
 
 import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
-
-import type { Repo } from './types/repo.js';
+// import type { Repo } from './types/repo.js';
 
 import Footer from './components/footer.js';
 import Header from './components/header.js';
 import Links from './components/links.js';
 import Main from './components/main.js';
 import Repos from './components/repos.js';
-import getRepos from './lib/github.js';
+import { projects } from './data/projects.js';
+// import getRepos from './lib/github.js';
 
 const app = new Hono();
 
@@ -74,18 +74,14 @@ const Layout: FC = ({ children }) => {
   );
 };
 
-type PortfolioProps = {
-  repos: Repo[];
-};
-
-function Portfolio({ repos }: PortfolioProps) {
+function Portfolio() {
   return (
     <Layout>
       <main>
         <Header />
         <Main />
         <Links />
-        <Repos repos={repos} />
+        <Repos projects={projects} />
         <Footer />
       </main>
     </Layout>
@@ -93,9 +89,7 @@ function Portfolio({ repos }: PortfolioProps) {
 }
 
 app.get('/', async c => {
-  const repos = await getRepos();
-
-  return c.html('<!DOCTYPE html>' + <Portfolio repos={repos} />);
+  return c.html('<!DOCTYPE html>' + <Portfolio />);
 });
 
 export default app;

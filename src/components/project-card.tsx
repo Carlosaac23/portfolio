@@ -1,30 +1,20 @@
-import type { Repo } from '../types/repo.js';
+// import type { Repo } from '../types/repo.js';
+import type { Project } from '../types/project.js';
 
-import { topicLabels } from '../data/topics.js';
+// import { topicLabels } from '../data/topics.js';
 import ExternalLinkIcon from './external-link.js';
 
-type ProjectCardProps = Repo & { index: number };
-
-const screenshots: Record<string, string> = {
-  'stoic-API': 'stoic-api',
-  'genkey-cli': 'genkey-cli',
-  'APV-frontend': 'apv',
-};
+type ProjectCardProps = Project & { index: number };
 
 export default function ProjectCard({
   name,
-  html_url,
-  homepage,
   description,
-  topics,
+  repositoryUrl,
+  demoUrl,
+  technologies,
+  image,
   index,
 }: ProjectCardProps) {
-  const screenshot = screenshots[name];
-  const stack = (topics ?? [])
-    .filter(topic => topicLabels[topic])
-    .slice(0, 4)
-    .map(topic => topicLabels[topic]);
-
   return (
     <li class='project__card'>
       <span class='project__number' aria-hidden='true'>
@@ -34,39 +24,38 @@ export default function ProjectCard({
         <h3 class='project__card-title' id={`project-${index}`}>
           {name}
         </h3>
-        <p class='project__card-description'>{description || 'Explore this project on GitHub.'}</p>
-        {stack.length > 0 ? (
+        <p class='project__card-description'>{description}</p>
+        {technologies.length > 0 ? (
           <ul class='project__card-topics' aria-label='Technologies'>
-            {stack.map(topic => (
-              <li class='project__card-topic' key={topic}>
-                {topic}
+            {technologies.map(technology => (
+              <li class='project__card-topic' key={technology}>
+                {technology}
               </li>
             ))}
           </ul>
         ) : null}
         <div class='project__actions'>
-          {homepage ? (
-            <a class='project__link' href={homepage} target='_blank' rel='noopener noreferrer'>
+          {demoUrl ? (
+            <a class='project__link' href={demoUrl} target='_blank' rel='noopener noreferrer'>
               Live demo <ExternalLinkIcon />
               <span class='project__sr-only'> for {name} (opens in a new tab)</span>
             </a>
           ) : null}
-          {html_url ? (
-            <a class='project__link' href={html_url} target='_blank' rel='noopener noreferrer'>
-              GitHub <ExternalLinkIcon />
-              <span class='project__sr-only'> for {name} (opens in a new tab)</span>
-            </a>
-          ) : null}
+
+          <a class='project__link' href={repositoryUrl} target='_blank' rel='noopener noreferrer'>
+            GitHub <ExternalLinkIcon />
+            <span class='project__sr-only'> for {name} (opens in a new tab)</span>
+          </a>
         </div>
       </article>
       <div class='project__preview'>
-        {screenshot ? (
+        {image ? (
           <img
             class='project__screenshot'
-            src={`/static/projects/${screenshot}.png`}
-            alt={`Screenshot of the ${name} website`}
-            width='1280'
-            height='800'
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
             loading='lazy'
             decoding='async'
           />
@@ -77,7 +66,7 @@ export default function ProjectCard({
               {'{ }'}
             </span>
             <span class='project__preview-stack'>
-              {stack.join(' / ') || 'Source code on GitHub'}
+              {technologies.join(' / ') || 'Source code on GitHub'}
             </span>
           </div>
         )}
