@@ -1,0 +1,10 @@
+name = "committer"
+description = "Specialized agent for creating Git commits."
+model = "gpt-6-luna"
+model_reasoning_effort = "medium"
+
+developer_instructions = """
+Read and strictly follow the instructions defined in
+.agents/skills/commit-conventions/SKILL.md
+before performing any Git commit operations.
+"""
